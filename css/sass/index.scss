@@ -1,0 +1,240 @@
+@import "includes/settings";
+
+
+//body{
+//  background:yellow;
+//}
+.content-wrap{
+  min-width: 536px;
+  width: 50%;
+  margin: 0 auto;
+}
+header{
+  padding-top: 14px;
+  .logo{
+    margin-bottom: 14px;
+    display: inline-block;
+  }
+  ul{
+    float: right;
+    @include clearfix();
+    li{
+      float: left;
+      a{
+        padding: 5px;
+        margin-left: 10px;
+        position: relative;
+        &:first-child{
+          margin-left: 0;
+        }
+        &:before{
+          content:'';
+          display: block;
+          position:absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          background-color: #5e97cb;
+          transition: width 2s;
+        }
+        &:hover{
+          &:before{
+            width: 100%;
+            height: 1px;
+            //border-bottom:1px solid #5e97cb;
+          }
+        }
+      }
+    }
+  }
+}
+.section{
+  &-name{
+    position: relative;
+    text-align: center;
+    width: 50%;
+    margin: 40px auto 20px;
+    &:before{
+      content:'';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #ececec;
+      border-top:1px solid #d8d8d8;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    p{
+      background: #fff;
+      position: relative;
+      display: inline-block;
+      padding: 5px 20px;
+      color: #707070;
+    }
+  }
+  &-navigation{
+    text-align: center;
+    margin-bottom: 30px;
+    a{
+      border:1px solid #0474bc;
+      border-radius: 5px;
+
+      padding: 3px 10px;
+      margin-left: 10px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:hover{
+        color: #fff;
+        background-color: #0474bc;
+      }
+    }
+  }
+  &-hello{
+    .content-wrap{
+      height: 100%;
+    }
+    background: #0474bc;
+    background: -moz-linear-gradient(45deg, #0474bc 0%, #32b1ea 100%);
+    background: -webkit-linear-gradient(45deg, #0474bc 0%,#32b1ea 100%);
+    background: linear-gradient(45deg, #0474bc 0%,#32b1ea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0474bc', endColorstr='#32b1ea',GradientType=1 );
+    height: 235px;
+    p {
+      color: #fff;
+    }
+  }
+  &-boxes{
+    .item-boxes{
+      display: flex;
+    }
+    .item-box{
+      border-radius: 5px;
+      background-color: #dedede;
+      padding: 20px 15px;
+      color: #000;
+      text-align: center;
+      margin: 10px;
+      font-size: 14px;
+      width: 33%;
+    }
+  }
+  &-filters{
+    margin-bottom: 50px;
+    .content-images{
+      display: flex;
+      div{
+        //flex-basis: 25%;
+        margin-left: 20px;
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+      img{
+        //width: 25%;
+        width: 100%;
+      }
+    }
+  }
+  .hello-text{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.hidden-item{
+  visibility: hidden;
+}
+footer{
+  background: #1a1a1a;
+  padding: 20px 0 30px;
+  .content-wrap{
+    @include clearfix();
+  }
+  .footer-column{
+    float: left;
+    margin-left: 50px;
+    position: relative;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  .company-column{
+    width: 115px;
+    color: #fff;
+    .footer-logo span{
+      color: #5e97cb;
+    }
+    &__description{
+      font-size: 10px;
+    }
+  }
+  .footer-column__head{
+    color: #fff;
+    position: relative;
+    min-width: 150px;
+    margin-bottom: 10px;
+    p{
+      border-bottom: 1px solid #5e97cb;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 3px;
+    }
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom:0;
+      width: 100%;
+      height: 1px;
+      background-color: #fff;
+    }
+  }
+  .footer-buttons{
+    border: 1px solid #555;
+    border-radius: 3px;
+    color: #555;
+    padding: 3px 10px;
+    float: left;
+    margin-left: 10px;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:hover{
+      border-color: #5e97cb;
+      color: #5e97cb;
+    }
+  }
+  .footer-list{
+    padding-left: 20px;
+    li{
+      position: relative;
+      color: #555;
+      a{
+        color: #555;
+        &:hover{
+          color: #5e97cb;
+        }
+      }
+    }
+    li:before {
+      content: "";
+      border-color: transparent #555;
+      border-style: solid;
+      border-width: 0.35em 0 0.35em 0.45em;
+      display: block;
+      height: 0;
+      width: 0;
+      left: -1em;
+      //top: 0.9em;
+      top: 6px;
+      //position: relative;
+      position: absolute;
+    }
+  }
+}
+

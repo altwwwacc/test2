@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logo</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+<header>
+    <div class="content-wrap">
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li>
+                <a href="#boxes" class="active">Boxes</a>
+            </li>
+            <li>
+                <a href="#filters">Filter</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class="section section-hello">
+    <div class="content-wrap">
+        <div class="hello-text">
+            <p>Simple text in the middle of rgis background</p>
+        </div>
+
+    </div>
+</div>
+<div class="section section-boxes" id="boxes">
+    <div class="content-wrap">
+        <div class="section-name">
+            <p>Boxes</p>
+        </div>
+    </div>
+    <div class="content-wrap item-boxes">
+        <div class="item-box">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="item-box">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </div>
+        <div class="item-box">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </div>
+    </div>
+</div>
+<div class="section section-filters" id="filters">
+    <div class="content-wrap">
+        <div class="section-name">
+            <p>Filters</p>
+        </div>
+        <div class="section-navigation">
+            <a href="#" class="section-navigation-item" data-category="1">
+                Category 1
+            </a>
+            <a href="#" class="section-navigation-item" data-category="2">
+                Category 2
+            </a>
+        </div>
+    </div>
+    <div class="content-wrap content-images">
+        <div class="content-images__item" data-category="1,2">
+            <img src="img/img01.png" alt="img1" class="category_1">
+        </div>
+        <div class="content-images__item" data-category="1,2">
+            <img src="img/img02.png" alt="img2" class="category_1">
+        </div>
+        <div class="content-images__item" data-category="1">
+            <img src="img/img03.png" alt="img3" class="category_2">
+        </div>
+        <div class="content-images__item" data-category="1">
+            <img src="img/img04.png" alt="img4" class="category_2">
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="content-wrap">
+        <div class="footer-column company-column">
+            <div class="footer-logo">
+                L<span>O</span>GO
+            </div>
+            <div class="company-column__description">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </div>
+        </div>
+        <div class="footer-column footer-column_buttons">
+            <div class="footer-column__head">
+                <p>ODKAZY</p>
+            </div>
+            <div>
+                <a href="#" class="footer-buttons">Odkaz</a>
+                <a href="#" class="footer-buttons">Odkaz</a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <div class="footer-column__head">
+                <p>ODKAZY</p>
+            </div>
+            <ul class="footer-list">
+                <li>
+                    <a href="#">Odkaz 01</a>
+                </li>
+                <li>
+                    <a href="#">Odkaz 01</a>
+                </li>
+                <li>
+                    <a href="#">Odkaz 01</a>
+                </li>
+                <li>
+                    <a href="#">Odkaz 01</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script>
+    var sectionFilters = document.getElementsByClassName('section-filters')[0];
+    var sectionFiltersContentItems = sectionFilters.getElementsByClassName('content-images__item');
+    var sectionFiltersNavigationItems = sectionFilters.getElementsByClassName('section-navigation-item');
+
+    for (var z = 0; z < sectionFiltersNavigationItems.length; z++) {
+        sectionFiltersNavigationItems[z].onclick = function(event){
+            event.preventDefault();
+            filtersCategory(event.target.getAttribute('data-category'));
+        };
+    }
+    function filtersCategory(categoryId) {
+        for (var i = 0; i < sectionFiltersContentItems.length; i++){
+            var currentItem = sectionFiltersContentItems[i];
+            var itemCategories = currentItem.getAttribute('data-category').split(',');
+            if (itemCategories.indexOf(categoryId) == -1) {
+                currentItem.classList.add('hidden-item');
+                continue;
+            } else {
+                currentItem.classList.remove('hidden-item')
+            }
+        }
+    }
+</script>
+</body>
+</html>

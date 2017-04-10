@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@mixin clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  * html & { height: 1px }
+}
+@mixin img_wrap{
+    position: relative;
+  & img{
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
